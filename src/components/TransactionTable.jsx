@@ -3,7 +3,7 @@ import TransactionItem from './TransactionItem'
 import "../TransactionTable.css"
 import Filter from './Filter';
 
-function TransactionTable({ items }) {
+function TransactionTable({ items, handleDelete }) {
   
   const [filterText, setFilterText] = useState("");
 
@@ -11,7 +11,7 @@ function TransactionTable({ items }) {
 
   const transactions = transactionsDisplayed.map((item) => {
     return (
-      <TransactionItem key={item.id} description={item.description} category={item.category} amount={item.amount} date={item.date} />
+      <TransactionItem key={item.id} identify={item.id} description={item.description} category={item.category} amount={item.amount} date={item.date} handleDelete={handleDelete} />
     );
   });
 
@@ -27,6 +27,7 @@ function TransactionTable({ items }) {
             <th>CATEGORY</th>
             <th>AMOUNT</th>
             <th>DATE</th>
+            <th>DELETE</th>
           </tr>
         </thead>
         <tbody>

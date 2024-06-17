@@ -11,7 +11,7 @@ function TransactionForm( { onTaskFormSubmit, categories } ) {
 
   const categoriesDisplayed = categories.map((category, index) => {
         return (
-            <option key={index} value="text">{category}</option>
+            <option key={index} value={category}>{category}</option>
         )
     })
 
